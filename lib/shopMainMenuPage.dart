@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:shopping/shopBottomNavigator.dart';
 
 class Store extends StatefulWidget {
@@ -10,6 +11,7 @@ class Store extends StatefulWidget {
 }
 
 class _StoreState extends State<Store> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +60,18 @@ class _StoreState extends State<Store> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchItem();
+  }
+}
+
+void fetchItem() async{
+  var url = Uri.parse("https://cyclamen-trousers.000webhostapp.com/");
+  Response res = await get(url);
+  print(res.body);
 }
 
 Card generateItem(context) {
