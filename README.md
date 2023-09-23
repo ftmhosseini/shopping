@@ -1,5 +1,4 @@
 # shopping
-# Flutter Shopping App
 
 ![Flutter Shopping App](app_screenshot.png)
 
